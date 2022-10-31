@@ -5,18 +5,7 @@ import Database.SQLite.Simple
 import Database.SQLite.Simple.FromRow
 import Data.Time
 import SQLiteModule(withConn, executeCommands)
-
-data Article = Article  { articleId::Int
-                        , title::String
-                        , description::String
-                        }
-instance Show Article where
-   show article = mconcat [ show $ articleId article
-                       , ".)  "
-                       , title article
-                       , " "
-                       , description article
-                       , "\n"]
+import UserModule(User(..))
 
 addArticle :: Int -> String -> String -> IO ()
 addArticle articleId title description = withConn "FacultyNewspaper.db" $
@@ -33,5 +22,6 @@ createTables = executeCommands ["CREATE TABLE users(id INTEGER PRIMARY KEY, user
                                       ]
 
 main :: IO ()
-main = createTables
+main = do let user = User 1 "Mike" "@gmail"
+          print(user)
 
