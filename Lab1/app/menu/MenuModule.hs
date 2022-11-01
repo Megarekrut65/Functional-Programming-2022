@@ -2,6 +2,7 @@ module MenuModule(menu) where
 
 import UserMenuModule(userMenu)
 import AuthorMenuModule(authorMenu)
+import SectionMenuModule(sectionMenu)
 
 menu:: IO()
 menu = do
@@ -14,5 +15,8 @@ menu = do
                    menu
             2 -> do
                    authorMenu
+                   menu
+            3 -> do
+                   sectionMenu
                    menu
             0 -> return ()
