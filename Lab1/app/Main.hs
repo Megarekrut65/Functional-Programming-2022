@@ -1,27 +1,8 @@
 module Main where
 
-import Control.Applicative
-import Database.SQLite.Simple
-import Database.SQLite.Simple.FromRow
-import Data.Time
 import SQLiteModule(withConn, executeCommands)
-import UserModule(User(..))
-import AuthorModule(Author(..))
-import ArticleModule(Article(..))
-import CommentModule(Comment(..))
-import SectionModule(Section(..))
-import StatisticModule(Statistic(..))
-import SQLUserModule(addUser, printUsers, printUser, updateUser)
-import ResourceModule(databaseName)
-import UserMenuModule(userMenu)
-import AuthorMenuModule(authorMenu)
+import MenuModule(menu)
 
-addArticle :: User -> IO ()
-addArticle user = withConn databaseName $
-                                    \conn -> do
-                                      execute conn
-                                        "INSERT INTO users (id, username, email) VALUES (?, ?, ?);"
-                                        (UserModule.userId user, username user, email user)
 createTables :: IO()
 createTables = executeCommands ["CREATE TABLE users(id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, email TEXT);",
                                        "CREATE TABLE authors(id INTEGER PRIMARY KEY AUTOINCREMENT, full_name TEXT, phone TEXT, position TEXT);",
@@ -32,5 +13,5 @@ createTables = executeCommands ["CREATE TABLE users(id INTEGER PRIMARY KEY AUTOI
                                       ]
 
 main :: IO ()
-main = authorMenu
+main = menu
 

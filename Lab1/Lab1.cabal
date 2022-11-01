@@ -36,6 +36,7 @@ executable Lab1
                         , ResourceModule
                         , UserMenuModule
                         , AuthorMenuModule
+                        , MenuModule
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
