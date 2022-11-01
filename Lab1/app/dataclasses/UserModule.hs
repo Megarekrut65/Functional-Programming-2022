@@ -10,4 +10,4 @@ instance Show User where
                        , username user
                        , "\t"
                        , email user
-                       , "\n"]
+                       ]

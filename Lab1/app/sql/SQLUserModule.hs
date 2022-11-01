@@ -1,4 +1,4 @@
-module SQLUserModule(addUser, printUsers, printUser, updateUser) where
+module SQLUserModule(addUser, printUsers, printUser, updateUser, getUser) where
 
 import Database.SQLite.Simple
 import UserModule(User(..))
@@ -11,15 +11,16 @@ instance FromRow User where
                   <*> field
 
 addUser:: User -> IO ()
-addUser user = withConn databaseName $
+addUser user = do
+                  withConn databaseName $
                           \conn -> do
                             execute conn
-                              "INSERT INTO users (id, username, email) VALUES (?, ?, ?);"
-                              (userId user, username user, email user)
+                              "INSERT INTO users (username, email) VALUES (?, ?);"
+                              (username user, email user)
 
 printUserTable:: [User] -> IO()
 printUserTable users = do
-                          putStr "id)\tusername\temail\n"
+                          putStr "Users:\nid)\tusername\temail\n"
                           mapM_ print users
 
 printUsers :: IO ()
