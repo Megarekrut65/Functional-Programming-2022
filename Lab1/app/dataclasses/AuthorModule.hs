@@ -1,7 +1,7 @@
 module AuthorModule(Author(..)) where
 
 data Author = Author{authorId::Int
-                    , full_name::String
+                    , fullName::String
                     , phone::String
                     , position::String
                     }
@@ -9,7 +9,7 @@ data Author = Author{authorId::Int
 instance Show Author where
    show author = mconcat [ show $ authorId author
                        , ")\t"
-                       , full_name author
+                       , fullName author
                        , "\t"
                        , phone author
                        , "\t"

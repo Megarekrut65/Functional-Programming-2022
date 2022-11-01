@@ -11,13 +11,14 @@ import ArticleModule(Article(..))
 import CommentModule(Comment(..))
 import SectionModule(Section(..))
 import StatisticModule(Statistic(..))
+import SQLUserModule(addUser, printUsers, printUser)
 
-addArticle :: Int -> String -> String -> IO ()
-addArticle articleId title description = withConn "FacultyNewspaper.db" $
+addArticle :: User -> IO ()
+addArticle user = withConn "FacultyNewspaper.db" $
                                     \conn -> do
                                       execute conn
-                                        "INSERT INTO article (id, title, description) VALUES (?, ?, ?);"
-                                        (articleId, title, description)
+                                        "INSERT INTO users (id, username, email) VALUES (?, ?, ?);"
+                                        (UserModule.userId user, username user, email user)
 createTables :: IO()
 createTables = executeCommands ["CREATE TABLE users(id INTEGER PRIMARY KEY, username TEXT, email TEXT);",
                                        "CREATE TABLE authors(id INTEGER PRIMARY KEY, full_name TEXT, phone TEXT, position TEXT);",
@@ -28,6 +29,5 @@ createTables = executeCommands ["CREATE TABLE users(id INTEGER PRIMARY KEY, user
                                       ]
 
 main :: IO ()
-main = do let user = Statistic 1 20 1
-          print(user)
+main = printUser 10
 

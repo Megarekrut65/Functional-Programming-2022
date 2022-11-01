@@ -31,6 +31,8 @@ executable Lab1
                         , CommentModule
                         , SectionModule
                         , StatisticModule
+                        , SQLUserModule
+                        , ResourceModule
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:
@@ -39,4 +41,6 @@ executable Lab1
                         , time
     default-extensions: OverloadedStrings
     hs-source-dirs:   app
+                      , app/dataclasses
+                      , app/sql
     default-language: Haskell2010
