@@ -1,4 +1,4 @@
-module SQLUserModule(addUser, printUsers, printUser) where
+module SQLUserModule(addUser, printUsers, printUser, updateUser) where
 
 import Database.SQLite.Simple
 import UserModule(User(..))
@@ -42,3 +42,14 @@ printUser userId = withConn databaseName $
                               case resp of
                                 Just n  -> printUserTable [n]
                                 Nothing -> putStrLn "Not found!"
+
+updateUser:: Connection -> User -> IO()
+updateUser conn user = do
+                        findUser <- getUser conn (userId user)
+                        case findUser of
+                           Just n  -> do
+                                        resp <- query conn
+                                                       "UPDATE users SET username = ?, email = ? WHERE id = ?;"
+                                                       (username user, email user, userId user) :: IO [User]
+                                        putStrLn "Updated!"
+                           Nothing -> putStrLn "Not Found!"

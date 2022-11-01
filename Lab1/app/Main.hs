@@ -11,10 +11,11 @@ import ArticleModule(Article(..))
 import CommentModule(Comment(..))
 import SectionModule(Section(..))
 import StatisticModule(Statistic(..))
-import SQLUserModule(addUser, printUsers, printUser)
+import SQLUserModule(addUser, printUsers, printUser, updateUser)
+import ResourceModule(databaseName)
 
 addArticle :: User -> IO ()
-addArticle user = withConn "FacultyNewspaper.db" $
+addArticle user = withConn databaseName $
                                     \conn -> do
                                       execute conn
                                         "INSERT INTO users (id, username, email) VALUES (?, ?, ?);"
@@ -29,5 +30,6 @@ createTables = executeCommands ["CREATE TABLE users(id INTEGER PRIMARY KEY, user
                                       ]
 
 main :: IO ()
-main = printUser 10
+main = withConn databaseName $
+                   \conn -> do printUser 1
 
