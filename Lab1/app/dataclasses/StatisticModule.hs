@@ -11,4 +11,4 @@ instance Show Statistic where
                        , show $ viewCount statistic
                        , "\t"
                        , show $ articleId statistic
-                       , "\n"]
+                       ]

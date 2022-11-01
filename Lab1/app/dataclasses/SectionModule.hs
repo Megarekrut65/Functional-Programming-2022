@@ -8,4 +8,4 @@ instance Show Section where
    show section = mconcat [ show $ sectionId section
                        , ")\t"
                        , name section
-                       , "\n"]
+                       ]

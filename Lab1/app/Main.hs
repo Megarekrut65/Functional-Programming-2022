@@ -14,6 +14,7 @@ import StatisticModule(Statistic(..))
 import SQLUserModule(addUser, printUsers, printUser, updateUser)
 import ResourceModule(databaseName)
 import UserMenuModule(userMenu)
+import AuthorMenuModule(authorMenu)
 
 addArticle :: User -> IO ()
 addArticle user = withConn databaseName $
@@ -31,5 +32,5 @@ createTables = executeCommands ["CREATE TABLE users(id INTEGER PRIMARY KEY AUTOI
                                       ]
 
 main :: IO ()
-main = userMenu
+main = authorMenu
 

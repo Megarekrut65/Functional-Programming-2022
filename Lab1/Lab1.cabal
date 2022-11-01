@@ -32,8 +32,10 @@ executable Lab1
                         , SectionModule
                         , StatisticModule
                         , SQLUserModule
+                        , SQLAuthorModule
                         , ResourceModule
                         , UserMenuModule
+                        , AuthorMenuModule
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:

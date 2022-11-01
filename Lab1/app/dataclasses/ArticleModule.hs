@@ -17,4 +17,4 @@ instance Show Article where
                        , show $ sectionId article
                        , "\t"
                        , show $ authorId article
-                       , "\n"]
+                       ]

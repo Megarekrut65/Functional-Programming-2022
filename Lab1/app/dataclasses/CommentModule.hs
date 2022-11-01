@@ -14,4 +14,4 @@ instance Show Comment where
                        , show $ articleId comment
                        , "\t"
                        , show $ userId comment
-                       , "\n"]
+                       ]

@@ -14,4 +14,4 @@ instance Show Author where
                        , phone author
                        , "\t"
                        , position author
-                       , "\n"]
+                       ]

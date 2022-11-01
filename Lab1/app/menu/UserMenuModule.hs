@@ -12,6 +12,7 @@ addUserMenu = do
                 putStrLn "Enter email:"
                 email <- getLine
                 addUser (User 0 username email)
+                putStrLn "Added!"
 
 updateUserMenu:: IO()
 updateUserMenu = do
