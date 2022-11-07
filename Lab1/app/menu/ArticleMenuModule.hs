@@ -4,7 +4,8 @@ import Database.SQLite.Simple
 
 import ArticleModule(Article(..))
 import SQLArticleModule(printArticles, printArticle, updateArticle, addArticle, getArticle)
-import SQLStatisticModule(addStatistic, updateStatistic, getStatistic)
+import SQLStatisticModule(addStatistic, updateStatistic, getStatistic, getStatisticByArticle)
+import StatisticModule(Statistic(..))
 import SQLAuthorModule(getAuthor)
 import SQLSectionModule(getSection)
 import SQLiteModule(withConn)
@@ -33,7 +34,7 @@ updateArticleMenu = do
                               \conn -> do
                                          resp <- getArticle conn articleId
                                          case resp of
-                                           Just n  -> do
+                                           Just n -> do
                                                         print $ n
                                                         putStrLn "Enter new title:"
                                                         title <- getLine
@@ -54,6 +55,14 @@ printArticleMenu = do
                 idLine <- getLine
                 let articleId = (read idLine::Int)
                 printArticle articleId
+                withConn databaseName $
+                           \conn -> do
+                                      statistic <- getStatisticByArticle conn articleId
+                                      case statistic of
+                                        Just n -> do
+                                                    updateStatistic conn (Statistic (statisticId n) (1 + viewCount n) articleId)
+                                        Nothing -> do
+                                                     addStatistic (Statistic 0 1 articleId)
 
 articleMenu:: IO()
 articleMenu = do

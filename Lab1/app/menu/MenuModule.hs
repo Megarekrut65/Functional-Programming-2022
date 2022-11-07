@@ -4,6 +4,7 @@ import UserMenuModule(userMenu)
 import AuthorMenuModule(authorMenu)
 import SectionMenuModule(sectionMenu)
 import ArticleMenuModule(articleMenu)
+import StatisticMenuModule(statisticMenu)
 
 menu:: IO()
 menu = do
@@ -22,5 +23,8 @@ menu = do
                    menu
             4 -> do
                    articleMenu
+                   menu
+            6 -> do
+                   statisticMenu
                    menu
             0 -> return ()
