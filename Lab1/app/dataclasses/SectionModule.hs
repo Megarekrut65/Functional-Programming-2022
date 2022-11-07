@@ -6,6 +6,6 @@ data Section = Section{sectionId::Int
 
 instance Show Section where
    show section = mconcat [ show $ sectionId section
-                       , ")\t"
+                       , ".\t|"
                        , name section
                        ]

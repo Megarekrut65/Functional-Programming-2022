@@ -9,12 +9,12 @@ data Article = Article{articleId::Int
 
 instance Show Article where
    show article = mconcat [ show $ articleId article
-                       , ")\t"
+                       , ".\t|"
                        , title article
-                       , "\t"
+                       , "\t|"
                        , description article
-                       , "\t"
+                       , "\t|"
                        , show $ sectionId article
-                       , "\t"
+                       , "\t|"
                        , show $ authorId article
                        ]

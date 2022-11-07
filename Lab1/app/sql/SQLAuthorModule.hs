@@ -21,7 +21,7 @@ addAuthor author = do
 
 printAuthorTable:: [Author] -> IO()
 printAuthorTable authors = do
-                          putStr "Authors:\nid)\tfull name\tphone\tposition\n"
+                          putStr "Authors:\nid)\t|full name\t|phone\t|position\n"
                           mapM_ print authors
 
 printAuthors :: IO ()

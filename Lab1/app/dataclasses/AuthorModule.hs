@@ -8,10 +8,10 @@ data Author = Author{authorId::Int
 
 instance Show Author where
    show author = mconcat [ show $ authorId author
-                       , ")\t"
+                       , ".\t|"
                        , fullName author
-                       , "\t"
+                       , "\t|"
                        , phone author
-                       , "\t"
+                       , "\t|"
                        , position author
                        ]

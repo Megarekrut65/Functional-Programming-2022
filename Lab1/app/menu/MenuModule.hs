@@ -5,6 +5,7 @@ import AuthorMenuModule(authorMenu)
 import SectionMenuModule(sectionMenu)
 import ArticleMenuModule(articleMenu)
 import StatisticMenuModule(statisticMenu)
+import CommentMenuModule(commentMenu)
 
 menu:: IO()
 menu = do
@@ -23,6 +24,9 @@ menu = do
                    menu
             4 -> do
                    articleMenu
+                   menu
+            5 -> do
+                   commentMenu
                    menu
             6 -> do
                    statisticMenu

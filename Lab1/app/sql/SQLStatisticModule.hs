@@ -20,7 +20,7 @@ addStatistic statistic = do
 
 printStatisticTable:: [Statistic] -> IO()
 printStatisticTable statistics = do
-                          putStr "Statistics:\nid)\tview count\tarticle id\n"
+                          putStr "Statistics:\nid)\t|view count\t|article id\n"
                           mapM_ print statistics
 
 printStatistics :: IO ()
@@ -65,7 +65,7 @@ updateStatistic conn statistic = do
                         case findStatistic of
                            Just n  -> do
                                         resp <- query conn
-                                                       "UPDATE users SET view_count = ?, articleId = ? WHERE id = ?;"
+                                                       "UPDATE statistics SET view_count = ?, articleId = ? WHERE id = ?;"
                                                        (viewCount statistic, articleId statistic, statisticId statistic) :: IO [Statistic]
-                                        putStrLn "Updated!"
+                                        return ()
                            Nothing -> putStrLn "Not Found!"

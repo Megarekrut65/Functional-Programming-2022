@@ -19,7 +19,7 @@ addSection section = do
 
 printSectionTable:: [Section] -> IO()
 printSectionTable sections = do
-                          putStr "Sections:\nid)\tname\n"
+                          putStr "Sections:\nid)\t|name\n"
                           mapM_ print sections
 
 printSections :: IO ()

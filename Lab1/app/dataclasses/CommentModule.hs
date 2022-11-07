@@ -8,10 +8,10 @@ data Comment = Comment{commentId::Int
 
 instance Show Comment where
    show comment = mconcat [ show $ commentId comment
-                       , ")\t"
+                       , ".\t|"
                        , description comment
-                       , "\t"
+                       , "\t|"
                        , show $ articleId comment
-                       , "\t"
+                       , "\t|"
                        , show $ userId comment
                        ]

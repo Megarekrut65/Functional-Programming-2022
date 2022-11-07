@@ -20,7 +20,7 @@ addUser user = do
 
 printUserTable:: [User] -> IO()
 printUserTable users = do
-                          putStr "Users:\nid)\tusername\temail\n"
+                          putStr "Users:\nid)\t|username\t|email\n"
                           mapM_ print users
 
 printUsers :: IO ()

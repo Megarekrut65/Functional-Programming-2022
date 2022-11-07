@@ -23,7 +23,7 @@ addArticle article = do
 
 printArticleTable:: [Article] -> IO()
 printArticleTable articles = do
-                          putStr "Articles:\nid)\ttitle\tdescription\tsection id\tauthor id\n"
+                          putStr "Articles:\nid)\t|title\t|description\t|section id\t|author id\n"
                           mapM_ print articles
 
 printArticles :: IO ()

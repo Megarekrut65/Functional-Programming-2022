@@ -6,8 +6,6 @@ import ArticleModule(Article(..))
 import SQLArticleModule(printArticles, printArticle, updateArticle, addArticle, getArticle)
 import SQLStatisticModule(addStatistic, updateStatistic, getStatistic, getStatisticByArticle)
 import StatisticModule(Statistic(..))
-import SQLAuthorModule(getAuthor)
-import SQLSectionModule(getSection)
 import SQLiteModule(withConn)
 import ResourceModule(databaseName)
 

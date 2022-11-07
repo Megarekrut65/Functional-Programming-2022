@@ -6,8 +6,8 @@ data User = User { userId::Int
                  }
 instance Show User where
    show user = mconcat [ show $ userId user
-                       , ")\t"
+                       , ".\t|"
                        , username user
-                       , "\t"
+                       , "\t|"
                        , email user
                        ]

@@ -7,8 +7,8 @@ data Statistic = Statistic{statisticId::Int
 
 instance Show Statistic where
    show statistic = mconcat [ show $ statisticId statistic
-                       , ")\t"
+                       , ".\t|"
                        , show $ viewCount statistic
-                       , "\t"
+                       , "\t|"
                        , show $ articleId statistic
                        ]
