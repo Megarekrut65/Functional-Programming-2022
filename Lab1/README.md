@@ -1,3 +1,3 @@
 # Functional-Programming-2022
-#Завдання. Варіант 5:
-Розробити інформаційну систему "Мережева газета факультету". Таблиці БД містять таку інформацію: Назва статті або графічного матеріалу, автор (...), текст анотації, де записані файли публікації, інформація про читачів та їх відгуки, статистику про окремі матеріали. Передбачити можливість запровадження та коригування інформації. Кількість таблиць - більше 5
+#Task. Option 5:
+Develop an information system "Faculty Network Newspaper". The database tables contain the following information: Title of the article or graphic material, author (...), annotation text, where publication files are recorded, information about readers and their feedback, statistics about individual materials. Provide for the possibility of introduction and correction of information. The number of tables is more than 5
