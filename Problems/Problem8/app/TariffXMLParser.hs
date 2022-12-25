@@ -1,11 +1,11 @@
 module TariffXMLParser(run) where
 
 import Text.XML.HXT.Core
+import TariffModule(Tariff(..))
 
 run :: String -> IO ()
 run file = do
             input <- readFile file
-            print input
             names <- runX $ readString [withValidate no] input
                     //> hasName "Name"
                     //> getText
@@ -26,4 +26,4 @@ run file = do
             print payrolls
             print call_price
             print sms_price
-            putStrLn "End"
+            putStrLn "Parsed"
