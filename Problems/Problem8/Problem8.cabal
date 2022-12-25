@@ -26,6 +26,7 @@ executable Problem8
 
     -- Modules included in this executable, other than Main.
     other-modules: TariffModule
+                   , TariffXMLParser
 
     -- LANGUAGE extensions used by modules in this package.
     -- other-extensions:

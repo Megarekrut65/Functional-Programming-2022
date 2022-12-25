@@ -1,0 +1,30 @@
+<Tariffs>
+    <Tariff>
+        <Name>Super+</Name>
+        <Operator>Vodafone UA</Operator>
+        <Payroll>300</Payroll>
+        <CallPrice>10</CallPrice>
+        <SMSPrice>10</SMSPrice>
+    </Tariff>
+    <Tariff>
+        <Name>Maxi</Name>
+        <Operator>Vodafone UA</Operator>
+        <Payroll>500</Payroll>
+        <CallPrice>50</CallPrice>
+        <SMSPrice>40</SMSPrice>
+    </Tariff>
+    <Tariff>
+        <Name>Bezlime</Name>
+        <Operator>Kyivstar</Operator>
+        <Payroll>350</Payroll>
+        <CallPrice>15</CallPrice>
+        <SMSPrice>5</SMSPrice>
+    </Tariff>
+    <Tariff>
+        <Name>Light</Name>
+        <Operator>Vodafone UA</Operator>
+        <Payroll>100</Payroll>
+        <CallPrice>5</CallPrice>
+        <SMSPrice>2</SMSPrice>
+    </Tariff>
+</Tariffs>

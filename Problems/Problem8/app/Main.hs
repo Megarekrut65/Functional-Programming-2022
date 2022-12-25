@@ -1,6 +1,7 @@
 module Main where
 
 import TariffModule(Tariff(..))
+import TariffXMLParser(run)
 
 main :: IO ()
-main = print (Tariff "Super+" "MTS" 100 10 5)
+main = run "input.xml"
